@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JR EDICIONES · Tienda de Libros</title>
+  <meta name="description" content="Tienda digital de libros JR EDICIONES">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#inicio">
+        <div class="brand-mark" id="brandMark">JR</div>
+        <div>
+          <strong id="storeName">JR LEÓN · LIBROS</strong>
+          <span id="storeSubtitle">Historias que dejan huella</span>
+        </div>
+      </a>
+      <a class="admin-link" href="admin.html">Editor</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">LIBROS DIGITALES Y EDICIONES ESPECIALES</span>
+          <h1 id="heroTitle">Historias para leer, sentir y recordar.</h1>
+          <p id="heroText">Descubre novelas de terror, drama y suspenso. Compra directamente en línea y accede a cada título desde su plataforma de venta.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#catalogo">Ver catálogo</a>
+            <a class="btn ghost" id="whatsBtn" href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="hero-books-real" id="fixedHeroBooks" aria-label="Portadas destacadas de JR EDICIONES">
+            <div class="hero-real-book hero-real-book-1">
+              <img src="assets/portada_inicio_1.png" alt="Portada destacada 1">
+            </div>
+            <div class="hero-real-book hero-real-book-2">
+              <img src="assets/portada_inicio_2.png" alt="Portada destacada 2">
+            </div>
+            <div class="hero-real-book hero-real-book-3">
+              <img src="assets/portada_inicio_3.png" alt="Portada destacada 3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar-section" id="catalogo">
+      <div class="wrap">
+        <div class="catalog-head">
+          <div>
+            <span class="eyebrow dark">CATÁLOGO</span>
+            <h2>Encuentra tu próxima lectura</h2>
+          </div>
+          <div class="search-wrap">
+            <input id="searchInput" type="search" placeholder="Buscar por título o autor…" autocomplete="off">
+          </div>
+        </div>
+        <div id="categoryTabs" class="category-tabs"></div>
+        <div id="status" class="status">Cargando catálogo…</div>
+        <div id="booksGrid" class="books-grid"></div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="wrap benefits-grid">
+        <article><strong>Compra directa</strong><span>Enlaces a Hotmart, Amazon u otra plataforma.</span></article>
+        <article><strong>Catálogo editable</strong><span>Actualiza títulos, precios, portadas y enlaces.</span></article>
+        <article><strong>Diseño adaptable</strong><span>Optimizado para celular, tablet y computadora.</span></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <span id="footerStore">JR LEÓN · LIBROS</span>
+      <span>Menú editorial digital</span>
+    </div>
+  </footer>
+
+  <div class="modal hidden" id="bookModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" type="button">×</button>
+      <div class="modal-grid">
+        <div id="modalMedia" class="modal-media"></div>
+        <div>
+          <span class="eyebrow dark" id="modalFormat"></span>
+          <h2 id="modalTitle"></h2>
+          <div class="modal-author" id="modalAuthor"></div>
+          <p id="modalDescription"></p>
+          <div class="modal-price" id="modalPrice"></div>
+          <div class="buy-actions" id="modalActions"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

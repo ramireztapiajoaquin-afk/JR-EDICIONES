@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Editor · Tienda de Libros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+</head>
+<body class="admin-body">
+  <main class="admin-wrap">
+    <section class="login-panel" id="loginPanel">
+      <span class="eyebrow dark">ADMINISTRACIÓN</span>
+      <h1>Editor de la tienda</h1>
+      <p>Inicia sesión con tu cuenta de Supabase.</p>
+      <input id="email" type="email" placeholder="Correo">
+      <input id="password" type="password" placeholder="Contraseña">
+      <button id="loginBtn" class="btn primary" type="button">Entrar</button>
+      <div id="loginMsg" class="admin-msg"></div>
+    </section>
+
+    <section class="hidden" id="adminPanel">
+      <div class="admin-topbar">
+        <div><span class="eyebrow dark">TIENDA DE LIBROS</span><h1>Panel de edición</h1></div>
+        <div class="admin-actions"><a class="btn ghost dark" href="index.html" target="_blank">Ver tienda</a><button id="logoutBtn" class="btn ghost dark">Salir</button></div>
+      </div>
+
+      <section class="admin-card">
+        <h2>Datos de la tienda</h2>
+        <div class="form-grid two">
+          <label>Nombre<input id="aStoreName"></label>
+          <label>Subtítulo<input id="aStoreSubtitle"></label>
+          <label>Título principal<input id="aHeroTitle"></label>
+          <label>WhatsApp<input id="aWhatsapp" placeholder="5215512345678"></label>
+          <label class="full">Texto principal<textarea id="aHeroText"></textarea></label>
+          <label class="full">URL del logo<input id="aLogoUrl" placeholder="https://..."></label>
+        </div>
+        <button id="saveStoreBtn" class="btn primary">Guardar tienda</button>
+      </section>
+
+      <section class="admin-card">
+        <div class="section-head"><div><h2>Categorías</h2><p>Organiza el catálogo por género o colección.</p></div><button id="addCategoryBtn" class="btn primary">+ Categoría</button></div>
+        <div id="categoriesEditor"></div>
+      </section>
+
+      <section class="admin-card">
+        <div class="section-head"><div><h2>Libros</h2><p>Edita título, precio, portada, descripción y enlaces de compra.</p></div><button id="addBookBtn" class="btn primary">+ Libro</button></div>
+        <div id="booksEditor"></div>
+      </section>
+      <div id="saveMsg" class="floating-msg"></div>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
